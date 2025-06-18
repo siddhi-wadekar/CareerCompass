@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Roadmap</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-color: #f8fafc;
+            --card-background: #ffffff;
+            --text-color: #1f2937;
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .selection-area {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .select-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        select {
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        select:hover {
+            border-color: var(--primary-color);
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        #roadmap {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .step {
+            background: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-4px);
+        }
+
+        .step h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .step p {
+            margin: 0.75rem 0;
+            color: #4b5563;
+        }
+
+        .step a {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .step a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: var(--text-color);
+            font-size: 1.75rem;
+            margin: 2rem 0 1.5rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header {
+                padding: 1.5rem 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .selection-area {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Career Roadmap Generator</h1>
+    </header>
+
+    <div class="container">
+        <div class="selection-area">
+            <div class="select-group">
+                <label for="domain">Select Domain</label>
+                <select id="domain" onchange="updateInterests()">
+                    <option value="">Choose a domain</option>
+                    <option value="Hotel Management">Hotel Management</option>
+                    <option value="Pharmacy">Pharmacy</option>
+                    <option value="Polytechnic">Polytechnic</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="PhD">PhD</option>
+                </select>
+            </div>
+
+            <div class="select-group">
+                <label for="interest">Select Interest</label>
+                <select id="interest" onchange="updateCareerPaths()" disabled>
+                    <option value="">Choose an interest</option>
+                </select>
+            </div>
+
+            <div class="select-group">
+                <label for="career_path">Select Career Path</label>
+                <select id="career_path" onchange="generateRoadmap()" disabled>
+                    <option value="">Choose a career path</option>
+                </select>
+            </div>
+        </div>
+
+        <h2>Your Career Roadmap</h2>
+        <div id="roadmap">
+            <!-- Roadmap steps will be populated here -->
+        </div>
+    </div>
+
+    <script>
+        const data = {
+            "Hotel Management": {
+                interests: ["Culinary Arts", "Front Office Management", "Hospitality Marketing"],
+                careers: {
+                    "Culinary Arts": ["Executive Chef", "Sous Chef", "Pastry Chef"],
+                    "Front Office Management": ["Front Office Manager", "Guest Relations Executive"],
+                    "Hospitality Marketing": ["Marketing Manager", "Brand Strategist"]
+                }
+            },
+            "Pharmacy": {
+                interests: ["Clinical Pharmacy", "Pharmaceutical Research", "Community Pharmacy"],
+                careers: {
+                    "Clinical Pharmacy": ["Clinical Pharmacist", "Drug Safety Associate"],
+                    "Pharmaceutical Research": ["Research Scientist", "Pharmacovigilance Expert"],
+                    "Community Pharmacy": ["Retail Pharmacist", "Pharmacy Manager"]
+                }
+            },
+            "Polytechnic": {
+                interests: ["Mechanical Engineering", "Civil Engineering", "Electrical Engineering"],
+                careers: {
+                    "Mechanical Engineering": ["Machine Design Engineer", "Production Supervisor"],
+                    "Civil Engineering": ["Site Engineer", "Structural Analyst"],
+                    "Electrical Engineering": ["Electrical Technician", "Power System Engineer"]
+                }
+            },
+            "Engineering": {
+                interests: ["Web Development", "AI/ML", "Cybersecurity", "Cloud Computing"],
+                careers: {
+                    "Web Development": ["Frontend Developer", "Backend Developer", "Full Stack Developer"],
+                    "AI/ML": ["Machine Learning Engineer", "AI Research Scientist"],
+                    "Cybersecurity": ["Security Analyst", "Penetration Tester"],
+                    "Cloud Computing": ["Cloud Solutions Architect", "DevOps Engineer"]
+                }
+            },
+            "PhD": {
+                interests: ["Data Science Research", "Theoretical Physics", "Biomedical Studies"],
+                careers: {
+                    "Data Science Research": ["Research Scientist", "Data Science Professor"],
+                    "Theoretical Physics": ["Physics Researcher", "Academic Lecturer"],
+                    "Biomedical Studies": ["Biomedical Researcher", "Clinical Trials Manager"]
+                }
+            }
+        };
+
+        function updateInterests() {
+            const domain = document.getElementById("domain").value;
+            const interestSelect = document.getElementById("interest");
+            const careerSelect = document.getElementById("career_path");
+            
+            if (!domain) {
+                interestSelect.disabled = true;
+                careerSelect.disabled = true;
+                interestSelect.innerHTML = '<option value="">Choose an interest</option>';
+                careerSelect.innerHTML = '<option value="">Choose a career path</option>';
+                document.getElementById("roadmap").innerHTML = '';
+                return;
+            }
+
+            const interests = data[domain].interests;
+            interestSelect.disabled = false;
+            interestSelect.innerHTML = '<option value="">Choose an interest</option>';
+
+            interests.forEach(interest => {
+                const option = document.createElement("option");
+                option.value = interest;
+                option.textContent = interest;
+                interestSelect.appendChild(option);
+            });
+
+            careerSelect.disabled = true;
+            careerSelect.innerHTML = '<option value="">Choose a career path</option>';
+            document.getElementById("roadmap").innerHTML = '';
+        }
+
+        function updateCareerPaths() {
+            const domain = document.getElementById("domain").value;
+            const interest = document.getElementById("interest").value;
+            const careerSelect = document.getElementById("career_path");
+
+            if (!interest) {
+                careerSelect.disabled = true;
+                careerSelect.innerHTML = '<option value="">Choose a career path</option>';
+                document.getElementById("roadmap").innerHTML = '';
+                return;
+            }
+
+            const careers = data[domain].careers[interest];
+            careerSelect.disabled = false;
+            careerSelect.innerHTML = '<option value="">Choose a career path</option>';
+
+            careers.forEach(career => {
+                const option = document.createElement("option");
+                option.value = career;
+                option.textContent = career;
+                careerSelect.appendChild(option);
+            });
+
+            document.getElementById("roadmap").innerHTML = '';
+        }
+
+
+        function generateRoadmap() {
+            const domain = document.getElementById("domain").value;
+            const interest = document.getElementById("interest").value;
+            const careerPath = document.getElementById("career_path").value;
+
+            if (!careerPath) {
+                document.getElementById("roadmap").innerHTML = '';
+                return;
+            }
+
+            const roadmapData = generate_roadmap(domain, interest, careerPath);
+            const roadmapDiv = document.getElementById("roadmap");
+            roadmapDiv.innerHTML = '';
+
+            roadmapData.forEach(step => {
+                const stepDiv = document.createElement("div");
+                stepDiv.classList.add("step");
+                stepDiv.innerHTML = `
+                    <h3>${step.title}</h3>
+                    <p>${step.description}</p>
+                    <a href="${step.link}" target="_blank">Learn More</a>
+                `;
+                roadmapDiv.appendChild(stepDiv);
+            });
+        }
+
+        // Initial call to populate interests and career paths
+        updateInterests();
+
+        // Example of roadmap data based on career paths
+        function generate_roadmap(domain, interest, careerPath) {
+            const roadmapData = {
+                // Engineering Domain
+                "Frontend Developer": [
+                    {"title": "Learn HTML, CSS, JS", "description": "Understand the core of frontend development.", "link": "frontend_html_css_js.html"},
+                    {"title": "Master Frameworks", "description": "Learn React, Angular, or Vue.js.", "link": "frontend_frameworks.html"},
+                    {"title": "Build Projects", "description": "Create real-world projects to showcase skills.", "link": "frontend_projects.html"}
+                ],
+
+                "Backend Developer": [
+                    {"title": "Learn Server-Side Technologies", "description": "Understand Node.js, Django, or Flask.", "link": "backend_server_side.html"},
+                    {"title": "Work with Databases", "description": "Learn SQL and NoSQL databases.", "link": "backend_databases.html"},
+                    {"title": "Develop Full Projects", "description": "Build and deploy backend applications.", "link": "backend_projects.html"}
+                ],
+
+                "Full Stack Developer": [
+                    {"title": "Learn Backend Development", "description": "Master backend technologies like Node.js, Django, or Flask.", "link": "fullstack_backend.html"},
+                    {"title": "Learn Databases", "description": "Understand SQL and NoSQL databases.", "link": "fullsatck_databases.html"},
+                    {"title": "Develop Full Projects", "description": "Build and deploy full-stack applications.", "link": "fullstack_projects.html"}
+                ],
+
+                "Machine Learning Engineer": [
+                    {"title": "Learn Python", "description": "Start with Python programming fundamentals.", "link": "ml_python.html"},
+                    {"title": "Understand ML Algorithms", "description": "Study regression, classification, and deep learning.", "link": "ml_algorithm.html"},
+                    {"title": "Work on ML Projects", "description": "Implement ML models on real-world datasets.", "link": "ml_projects.html"}
+                ],
+
+                "AI Research Scientist": [
+                    {"title": "Study AI Fundamentals", "description": "Understand AI concepts and applications.", "link": "ai_fundamentals.html"},
+                    {"title": "Master Neural Networks", "description": "Learn about CNNs, RNNs, and GANs.", "link": "ai_neural_networks.html"},
+                    {"title": "Develop AI Models", "description": "Work on AI projects and research papers.", "link": "ai_projects.html"}
+                ],
+                "Security Analyst": [
+                    {"title": "Learn Cybersecurity Basics", "description": "Understand security threats and vulnerabilities.", "link": "cybersecurity_basics.html"},
+                    {"title": "Master Ethical Hacking", "description": "Learn penetration testing and security tools.", "link": "cybersecurity_ethical_hacking.html"},
+                    {"title": "Work on Security Projects", "description": "Implement security measures in real-world scenarios.", "link": "cybersecurity_projects.html"}
+                ],
+
+                "Penetration Tester": [ 
+                    {"title": "Understand Penetration Testing", "description": "Learn about network and web application testing.", "link": "penetration_testing.html"},
+                    {"title": "Master Security Tools", "description": "Work with tools like Metasploit and Burp Suite.", "link": "penetration_tools.html"},
+                    {"title": "Perform Security Audits", "description": "Conduct security assessments and audits.", "link": "penetration_audits.html"}
+                ],
+                
+
+                "Cloud Solutions Architect": [
+                    {"title": "Learn Cloud Computing Basics", "description": "Understand cloud service models and deployment.", "link": "cloud_basics.html"},
+                    {"title": "Master Cloud Platforms", "description": "Work with AWS, Azure, or Google Cloud.", "link": "cloud_platforms.html"},
+                    {"title": "Design Cloud Solutions", "description": "Architect scalable and secure cloud applications.", "link": "cloud_solutions.html"}
+                ],
+
+                "DevOps Engineer": [
+                    {"title": "Understand DevOps Principles", "description": "Learn about CI/CD, automation, and monitoring.", "link": "devops_principles.html"},
+                    {"title": "Master DevOps Tools", "description": "Work with Docker, Kubernetes, and Jenkins.", "link": "devops_tools.html"},
+                    {"title": "Implement DevOps Practices", "description": "Deploy and manage applications using DevOps.", "link": "devops_practices.html"}
+                ],
+
+
+
+                // Hotel Management Domain
+                "Executive Chef": [
+                    {"title": "Learn Basic Cooking Techniques", "description": "Understand grilling, roasting, and frying.", "link": "chef_basic_cooking.html"},
+                    {"title": "Master Advanced Culinary Skills", "description": "Techniques like sous vide and molecular gastronomy.", "link": "chef_advanced_cooking.html"},
+                    {"title": "Gain Industry Experience", "description": "Work in top hotels and restaurants.", "link": "chef_experience.html"}
+                ],
+                "Sous Chef": [
+                    {"title": "Learn Kitchen Management", "description": "Understand food safety and hygiene.", "link": "sous_chef_management.html"},
+                    {"title": "Master Recipe Development", "description": "Create unique dishes and menus.", "link": "sous_chef_recipes.html"}
+                ],
+                "Pastry Chef": [
+                    {"title": "Study Baking and Pastry Arts", "description": "Learn about breads, cakes, and desserts.", "link": "pastry_baking.html"},
+                    {"title": "Master Chocolate and Sugar Art", "description": "Create intricate chocolate and sugar decorations.", "link": "pastry_art.html"}
+                ],
+
+
+                "Front Office Manager": [
+                    {"title": "Understand Guest Services", "description": "Learn customer interaction essentials.", "link": "front_office_guest_services.html"},
+                    {"title": "Master Hotel Reservation Systems", "description": "Work with industry-standard booking software.", "link": "front_office_reservations.html"}
+                ],
+                "Guest Relations Executive": [
+                    {"title": "Learn Communication Skills", "description": "Understand guest interaction and problem-solving.", "link": "guest_relations_communication.html"},
+                    {"title": "Master Conflict Resolution", "description": "Handle guest complaints and feedback.", "link": "guest_relations_resolution.html"}
+                ],
+                "Marketing Manager": [
+                    {"title": "Learn Digital Marketing", "description": "Master SEO, SEM, and social media marketing.", "link": "marketing_digital.html"},
+                    {"title": "Develop Brand Strategies", "description": "Understand hotel branding techniques.", "link": "marketing_branding.html"}
+                ],
+                "Brand Strategist": [
+                    {"title": "Study Market Research", "description": "Analyze industry trends and customer preferences.", "link": "brand_research.html"},
+                    {"title": "Master Advertising Campaigns", "description": "Create promotional strategies and ads.", "link": "brand_advertising.html"}
+                ],
+
+                // Pharmacy Domain
+                "Clinical Pharmacist": [
+                    {"title": "Study Pharmaceutical Sciences", "description": "Learn about drug interactions and safety.", "link": "pharma_sciences.html"},
+                    {"title": "Gain Practical Experience", "description": "Work in hospital pharmacies.", "link": "pharma_experience.html"}
+                ],
+                "Drug Safety Associate": [
+                    {"title": "Understand Pharmacovigilance", "description": "Learn drug safety monitoring and reporting.", "link": "pharma_vigilance.html"},
+                    {"title": "Master Regulatory Compliance", "description": "Work with FDA and EMA guidelines.", "link": "pharma_regulations.html"}
+                ],
+                "Pharmacovigilance Expert": [
+                    {"title": "Study Drug Safety Protocols", "description": "Understand adverse event reporting and analysis.", "link": "pharma_protocols.html"},
+                    {"title": "Master Risk Management", "description": "Develop risk mitigation strategies.", "link": "pharma_risk_management.html"}
+                ],
+                "Research Scientist": [
+                    {"title": "Master Laboratory Techniques", "description": "Get familiar with research methodologies.", "link": "pharma_lab_techniques.html"},
+                    {"title": "Develop New Drugs", "description": "Work on pharmaceutical innovation.", "link": "pharma_drug_development.html"}
+                ],
+                "Retail Pharmacist": [
+                    {"title": "Understand Pharmacy Operations", "description": "Learn about dispensing and inventory management.", "link": "pharma_operations.html"},
+                    {"title": "Master Patient Counseling", "description": "Provide medication information and advice.", "link": "pharma_counseling.html"}
+                ],
+                "Pharmacy Manager": [
+                    {"title": "Study Business Management", "description": "Understand pharmacy financials and regulations.", "link": "pharma_management.html"},
+                    {"title": "Manage Pharmacy Operations", "description": "Oversee staff, inventory, and customer service.", "link": "pharma_operations.html"}
+                ],
+
+                // Polytechnic Domain
+                "Machine Design Engineer": [
+                    {"title": "Learn Mechanical Drawing", "description": "Understand engineering drawing standards.", "link": "poly_mechanical_drawing.html"},
+                    {"title": "Master CAD Software", "description": "Work with AutoCAD, SolidWorks, etc.", "link": "poly_cad_design.html"}
+                ],
+                "Production Supervisor": [
+                    {"title": "Understand Manufacturing Processes", "description": "Learn about machining, casting, and molding.", "link": "poly_manufacturing.html"},
+                    {"title": "Master Quality Control", "description": "Implement quality standards and inspections.", "link": "poly_quality_control.html"}
+                ],
+                "Site Engineer": [
+                    {"title": "Study Construction Management", "description": "Understand project planning and execution.", "link": "poly_construction_management.html"},
+                    {"title": "Master Structural Analysis", "description": "Analyze building structures and materials.", "link": "poly_structural_analysis.html"}
+                ],
+                "Structural Analyst": [
+                    {"title": "Learn Finite Element Analysis", "description": "Understand FEA software and simulations.", "link": "poly_fea_analysis.html"},
+                    {"title": "Master Structural Design", "description": "Design buildings and bridges.", "link": "poly_structural_design.html"}
+                ],
+                "Electrical Technician": [
+                    {"title": "Understand Circuit Design", "description": "Learn how to build and analyze circuits.", "link": "poly_circuit_design.html"},
+                    {"title": "Gain Hands-on Experience", "description": "Work on live projects and prototypes.", "link": "poly_hands_on.html"}
+                ],
+                "Power System Engineer": [
+                    {"title": "Study Electrical Networks", "description": "Understand power distribution and transmission.", "link": "poly_power_networks.html"},
+                    {"title": "Master Renewable Energy", "description": "Work on solar, wind, and hydroelectric projects.", "link": "poly_renewable_energy.html"}
+                ],
+
+                // PhD Domain
+                "Data Science Researcher": [
+                    {"title": "Learn Data Analysis", "description": "Understand data processing techniques.", "link": "phd_data_analysis.html"},
+                    {"title": "Master Machine Learning", "description": "Use ML for scientific research.", "link": "phd_ml_research.html"}
+                ], 
+                "Theoretical Physicist": [
+                    {"title": "Study Quantum Mechanics", "description": "Understand quantum theory and applications.", "link": "phd_quantum_mechanics.html"},
+                    {"title": "Master Astrophysics", "description": "Explore the mysteries of the universe.", "link": "phd_astrophysics.html"}
+                ],
+                "Biomedical Researcher": [
+                    {"title": "Learn Medical Biology", "description": "Understand human anatomy and physiology.", "link": "phd_medical_biology.html"},
+                    {"title": "Master Disease Research", "description": "Work on cures and treatments for illnesses.", "link": "phd_disease_research.html"}
+                ],
+                "Clinical Trials Manager": [
+                    {"title": "Understand Clinical Research", "description": "Learn about drug trials and patient studies.", "link": "phd_clinical_research.html"},
+                    {"title": "Master Regulatory Compliance", "description": "Work with FDA and EMA guidelines.", "link": "phd_regulatory_compliance.html"}
+            ],
+            "Data Science Professor": [
+                {"title": "Study Data Science Fundamentals", "description": "Understand data analysis and visualization.", "link": "ds_fundamentals.html"},
+                {"title": "Master Research Methodologies", "description": "Learn statistical analysis and hypothesis testing.", "link": "ds_research_methods.html"}
+            ],
+            "Physics Researcher": [
+                {"title": "Study Advanced Physics", "description": "Explore quantum mechanics and relativity.", "link": "physics_advanced.html"},
+                {"title": "Master Experimental Physics", "description": "Work on cutting-edge research projects.", "link": "physics_experimental.html"}
+            ],
+            "Biomedical Researcher": [
+                {"title": "Learn Medical Biology", "description": "Understand human anatomy and physiology.", "link": "biomed_biology.html"},
+                {"title": "Master Disease Research", "description": "Work on cures and treatments for illnesses.", "link": "biomed_disease.html"}
+            ],
+            "Clinical Trials Manager": [
+                {"title": "Understand Clinical Research", "description": "Learn about drug trials and patient studies.", "link": "clinical_trials.html"},
+                {"title": "Master Regulatory Compliance", "description": "Work with FDA and EMA guidelines.", "link": "clinical_regulatory.html"}
+            ]
+            
+            };
+
+            return roadmapData[careerPath] || [];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* Container and Page Titles */
+.dayinlife-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #A9B5DF; /* Light Blue background */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(45, 51, 107, 0.2);
+}
+
+.page-title {
+  color: #2D336B; /* Dark Blue */
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  color: #2D336B;
+  margin-bottom: 20px;
+}
+
+/* Career Selection */
+.career-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.career-button {
+  background-color: #7886C7; /* Medium Blue */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.career-button:hover {
+  background-color: #2D336B;
+}
+
+/* Progress Bar */
+.progress-bar {
+  background-color: #fff;
+  border-radius: 5px;
+  height: 10px;
+  margin: 20px 0;
+  overflow: hidden;
+  border: 1px solid #7886C7;
+}
+
+.progress {
+  height: 100%;
+  background-color: #ff69b4; /* Accent Pink */
+  transition: width 0.3s ease;
+}
+
+/* Simulation Card and Result Card */
+.simulation-card,
+.result-card {
+  background-color: #fff;
+  padding: 35px; /* Increased padding */
+  margin: 20px auto;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 900px; /* Increased width */
+  box-shadow: 0 2px 12px rgba(45, 51, 107, 0.2); /* Slightly stronger shadow */
+}
+
+.scenario-question {
+  color: #2D336B;
+  margin-bottom: 20px;
+}
+
+/* Centered Options */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the options */
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.option-button {
+  background-color: #7886C7;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%; /* Ensures buttons are centered with proper width */
+  max-width: 400px; /* Restricts max width for better UI */
+  text-align: center;
+}
+
+.option-button:hover {
+  background-color: #2D336B;
+}
+
+/* Feedback and Navigation */
+.feedback-container {
+  margin-top: 20px;
+}
+
+.feedback-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #2D336B;
+}
+
+.next-button,
+.restart-button {
+  background-color: #ff69b4; /* Accent Pink */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+  max-width: 300px; /* Keeps buttons aligned properly */
+}
+
+.next-button:hover,
+.restart-button:hover {
+  background-color: #e6008a;
+}
+
+/* Results */
+.result-title {
+  color: #2D336B;
+  margin-bottom: 10px;
+}
+
+.result-score {
+  font-size: 24px;
+  color: #7886C7;
+  margin-bottom: 10px;
+}
+
+.result-message {
+  font-size: 18px;
+  color: #2D336B;
+  margin-bottom: 20px;
+}

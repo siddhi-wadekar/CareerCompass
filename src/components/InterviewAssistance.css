@@ -1,0 +1,124 @@
+/* InterviewAssistance.css */
+
+.ia-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #A9B5DF; /* Light Blue */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .ia-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2D336B; /* Dark Blue */
+    margin-bottom: 1rem;
+  }
+  
+  .ia-label {
+    font-weight: 600;
+    color: #2D336B;
+    margin-top: 1rem;
+    align-self: flex-start;
+  }
+  
+  .ia-question {
+    font-size: 1.25rem;
+    color: #2D336B;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .quiz-container,
+  .result-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(45, 51, 107, 0.2);
+    margin-top: 20px;
+  }
+  
+  .question-card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ia-textarea {
+    width: 100%;
+    max-width: 560px;
+    padding: 10px;
+    border: 2px solid #7886C7; /* Medium Blue */
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #2D336B;
+    background-color: #fff;
+    height: 100px;
+    resize: none;
+  }
+  
+  .ia-submit-button,
+  .ia-next-button,
+  .ia-restart-button {
+    background-color: #ff69b4; /* Accent Pink */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+  }
+  
+  .ia-submit-button:hover,
+  .ia-next-button:hover,
+  .ia-restart-button:hover {
+    background-color: #e6008a;
+  }
+  
+  .feedback-section {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ia-feedback-box {
+    background-color: #fff;
+    color: #2D336B;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 560px;
+    margin-top: 1rem;
+    border: 2px solid #7886C7;
+    font-size: 1rem;
+  }
+  
+  .results-list {
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
+  .result-item {
+    margin-bottom: 1rem;
+    padding: 10px;
+    border: 1px solid #7886C7;
+    border-radius: 5px;
+    background-color: #F8F9FA;
+  }
+  
+  .result-question,
+  .result-answer,
+  .result-feedback {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+    color: #2D336B;
+  }
+  

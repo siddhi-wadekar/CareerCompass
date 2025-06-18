@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Platforms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #009688;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #b2dfdb;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #222831;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #f9fafb;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-4px);
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #009688;
+            border-bottom: 3px solid #009688;
+            display: inline-block;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+        p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        .logos img {
+            width: 80px;
+            margin: 15px;
+            transition: transform 0.3s ease;
+        }
+        .logos img:hover {
+            transform: scale(1.1);
+        }
+        .back {
+            margin-top: 35px;
+        }
+        .back a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #009688;
+            padding: 12px 28px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+        .back a:hover {
+            background-color: #00796b;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .container {
+                padding: 25px;
+                margin: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .logos img {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>Career Navigator</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#providers">Providers</a>
+            <a href="#choose">Choosing</a>
+            <a href="#compare">Comparison</a>
+            <a href="#benefits">Benefits</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>🌐 Cloud Platforms</h1>
+        <p>Discover the leading cloud platforms and their services that power modern applications.</p>
+
+        <div id="providers" class="section">
+            <h2>☁️ Major Cloud Providers</h2>
+            <p>Explore top cloud providers like AWS, Microsoft Azure, Google Cloud Platform (GCP), and IBM Cloud.</p>
+            <div class="logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Google_Cloud_logo.svg" alt="GCP Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Cloud Logo">
+            </div>
+        </div>
+
+        <div id="choose" class="section">
+            <h2>🔌 Choosing the Right Platform</h2>
+            <p>Select the right platform based on pricing, services, performance, and scalability tailored to your project's needs.</p>
+        </div>
+
+        <div id="compare" class="section">
+            <h2>📊 Comparing Cloud Platforms</h2>
+            <p>Compare features, compliance standards, global reach, and integration support across major cloud providers.</p>
+        </div>
+
+        <div id="benefits" class="section">
+            <h2>🌟 Benefits of Cloud Computing</h2>
+            <p>Cloud platforms offer flexibility, cost-efficiency, scalability, and robust security, enabling businesses to innovate faster.</p>
+        </div>
+
+        <div class="back">
+            <a href="index.html">🔙 Back to Career Roadmap</a>
+        </div>
+    </div>
+</body>
+</html>

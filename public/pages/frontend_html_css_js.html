@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML, CSS, and JavaScript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #343a40;
+            font-size: 2.7rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.15rem;
+            color: #6c757d;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2d9cdb;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 3px solid #2d9cdb;
+            padding-bottom: 12px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 40px;
+        }
+        ul li {
+            font-size: 1.1rem;
+            color: #495057;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        ul li:before {
+            content: '✔️';
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+            color: #2d9cdb;
+        }
+        .resources a {
+            display: block;
+            padding: 15px;
+            margin: 12px 0;
+            background: #2d9cdb;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 1.15rem;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .resources a:hover {
+            background: #1d7bb9;
+            transform: translateY(-3px);
+        }
+        .back {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .back a {
+            color: #2d9cdb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            border: 2px solid #2d9cdb;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+        .back a:hover {
+            color: #fff;
+            background: #2d9cdb;
+            border-color: #2d9cdb;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                margin: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .resources a {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Learn HTML, CSS, and JavaScript</h1>
+        <p>HTML, CSS, and JavaScript are the foundational technologies for web development. Mastering them will allow you to create responsive, interactive, and visually engaging websites. Start building your web development journey now!</p>
+
+        <h2>📌 What You Will Learn:</h2>
+        <ul>
+            <li>💡 Basics of HTML (Tags, Structure, Forms)</li>
+            <li>🎨 CSS Styling (Selectors, Flexbox, Grid)</li>
+            <li>⚡ JavaScript (DOM Manipulation, Events, Functions)</li>
+        </ul>
+
+        <h2>💼 Skills You'll Need:</h2>
+        <ul>
+            <li>🔧 Basic computer literacy and knowledge of text editors</li>
+            <li>📊 Analytical thinking for problem-solving and debugging</li>
+            <li>✍️ Ability to write and understand code syntax and structures</li>
+            <li>🧠 Strong attention to detail to spot errors and improve code</li>
+        </ul>
+
+        <h2>🧠 Aptitude for Programming:</h2>
+        <ul>
+            <li>🔍 Logical thinking to break down complex problems into simple tasks</li>
+            <li>📐 Ability to visualize the layout and behavior of web pages</li>
+            <li>⚙️ Understanding of algorithms and data structures for optimization</li>
+            <li>💬 Communication skills for working with other developers and stakeholders</li>
+        </ul>
+
+        <h2>🎥 YouTube Learning Videos:</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank">HTML Full Course - Learn HTML in 12 Minutes</a></li>
+            <li><a href="https://www.youtube.com/watch?v=ieTHC78giGQ" target="_blank">CSS Full Course - Learn CSS in 10 Minutes</a></li>
+            <li><a href="https://www.youtube.com/watch?v=W6NZfCO5SIk" target="_blank">JavaScript Full Course - Learn JavaScript in 12 Minutes</a></li>
+        </ul>
+
+        <h2>📚 Additional Learning Resources:</h2>
+        <div class="resources">
+            <a href="https://www.freecodecamp.org/news/html-css-and-javascript-explained-for-beginners/" target="_blank">FreeCodeCamp - HTML, CSS, and JavaScript Explained</a>
+            <a href="https://www.w3schools.com/html/" target="_blank">W3Schools - HTML Guide</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN Web Docs - CSS Guide</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN Web Docs - JavaScript Guide</a>
+        </div>
+
+        <div class="back">
+            <a href="index.html">🔙 Back to Career Roadmap</a>
+        </div>
+    </div>
+
+</body>
+</html>

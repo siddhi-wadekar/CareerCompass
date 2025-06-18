@@ -1,0 +1,206 @@
+/* Overall Page Container */
+.page-container {
+  background-color: #FFF2F2;
+  color: #000;
+  font-family: Arial, sans-serif;
+  padding-bottom: 2rem;
+}
+
+/* Divider between sections */
+.divider {
+  border: none;
+  border-top: 1px solid #7886C7;
+  margin: 2rem 0;
+}
+
+/* Spacing between sections */
+.section-spacing {
+  margin-bottom: 2rem;
+}
+
+/* Centered Section for Benefits & FAQ */
+.centered-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-button,
+.section-heading {
+  text-align: center;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* Hero Section */
+.hero-container {
+  padding: 2rem;
+  background-color: #FFF2F2;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.hero-image-container {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+.hero-text-container {
+  flex: 1;
+  color: #000;
+}
+
+.hero-welcome {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  color: #000;
+}
+
+.blue-text {
+  color: #2D336B;
+}
+
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  color: #000;
+}
+
+.hero-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #7886C7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Grid Container for Benefits & FAQ in 2x3 layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Grid Cards (for Benefits & FAQ) */
+.grid-card {
+  background-color: #FFF2F2;
+  padding: 1.5rem;
+  border: 1px solid #7886C7;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefit-card {
+  background-color: #EDE7F6;
+}
+
+/* Reduced vertical size for FAQ cards */
+.faq-card {
+  height: 125px;
+}
+
+.grid-card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.grid-card-description,
+.grid-card-answer {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* FAQ Section */
+.faq-container {
+  background-color: #7886C7;
+  padding: 1rem;
+}
+
+.grid-card-question {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.faq-icon {
+  display: inline-block;
+  width: 20px;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-question-text {
+  display: inline-block;
+}
+
+.grid-card-question:hover .faq-icon {
+  transform: rotate(90deg);
+}
+
+.grid-card-answer {
+  margin-top: 0.5rem;
+  padding-left: 25px;
+  text-align: left;
+}
+
+/* Footer */
+.footer {
+  padding: 1rem;
+  background-color: #2D336B;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-social {
+  margin-top: 0.5rem;
+}

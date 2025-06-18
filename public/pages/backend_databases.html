@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Databases</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #343a40;
+            font-size: 2.7rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.15rem;
+            color: #6c757d;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2d9cdb;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 3px solid #2d9cdb;
+            padding-bottom: 12px;
+        }
+        .database {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .database:hover {
+            transform: translateY(-3px);
+        }
+        .database h3 {
+            color: #343a40;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .database p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        .database a {
+            display: inline-block;
+            background: #2d9cdb;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .database a:hover {
+            background: #1d7bb9;
+            transform: translateY(-3px);
+        }
+        .back {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .back a {
+            color: #2d9cdb;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            border: 2px solid #2d9cdb;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+        .back a:hover {
+            color: #fff;
+            background: #2d9cdb;
+            border-color: #2d9cdb;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                margin: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .database p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Backend Databases</h1>
+        <p>Databases are essential for storing, managing, and retrieving data in backend systems. Understanding different database types will help you choose the right one for your application's needs.</p>
+
+        <h2>💾 Popular Databases You Should Learn:</h2>
+
+        <div class="database">
+            <h3>MySQL - Relational Database Management System</h3>
+            <p>MySQL is a popular relational database known for its reliability, performance, and ease of use. It is often used in web applications due to its robustness and community support.</p>
+            <a href="https://www.mysql.com" target="_blank">Learn More</a>
+        </div>
+
+        <div class="database">
+            <h3>PostgreSQL - Advanced Open-Source Relational Database</h3>
+            <p>PostgreSQL is a powerful, open-source object-relational database system. It is highly customizable, supports complex queries, and ensures data integrity with ACID compliance.</p>
+            <a href="https://www.postgresql.org" target="_blank">Learn More</a>
+        </div>
+
+        <div class="database">
+            <h3>MongoDB - NoSQL Database</h3>
+            <p>MongoDB stores data in flexible, JSON-like documents. It is ideal for applications that require high performance, scalability, and flexibility with unstructured data.</p>
+            <a href="https://www.mongodb.com" target="_blank">Learn More</a>
+        </div>
+
+        <div class="back">
+            <a href="index.html">🔙 Back to Career Roadmap</a>
+        </div>
+    </div>
+
+</body>
+</html>

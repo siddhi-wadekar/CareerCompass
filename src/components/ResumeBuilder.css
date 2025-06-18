@@ -1,0 +1,150 @@
+/* ResumeBuilder.css */
+
+.rb-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #A9B5DF; /* Light Blue */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Title Styling */
+  .rb-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2D336B; /* Dark Blue */
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form Styling (Increased Width) */
+  .rb-form {
+    width: 100%;
+    max-width: 750px; /* Increased width */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(45, 51, 107, 0.3);
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Label Styling */
+  .rb-form label {
+    font-weight: 700;
+    color: #2D336B;
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1rem;
+  }
+  
+  /* Input & Textarea Styling */
+  .rb-form input,
+  .rb-form textarea {
+    width: 100%; /* Ensuring fields fit inside the form */
+    padding: 12px;
+    border: 2px solid #7886C7;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #2D336B;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+  }
+  
+  .rb-form textarea {
+    height: 120px;
+    resize: none;
+  }
+  
+  /* Button Styling */
+  .rb-generate-button,
+  .rb-download-button {
+    background-color: #2D336B; /* Dark Blue */
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .rb-generate-button:hover,
+  .rb-download-button:hover {
+    background-color: #1B2455; /* Slightly darker shade of Dark Blue */
+  }
+  
+  /* Resume Output Styling */
+  .rb-output {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    margin: 25px auto;
+  }
+  
+  /* Resume Preview Styling */
+  .resume {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(45, 51, 107, 0.3);
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Resume Header Styling */
+  .resume-header {
+    border-bottom: 3px solid #2D336B;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .resume-header h2 {
+    margin: 0;
+    color: #2D336B;
+    font-size: 1.8rem;
+  }
+  
+  .resume-header p {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  
+  .resume-header a {
+    color: #2D336B;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Section Styling */
+  .resume-section {
+    margin-bottom: 15px;
+  }
+  
+  .resume-section h3 {
+    color: #2D336B;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Skills Container */
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .skill-tag {
+    background: #2D336B;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+  

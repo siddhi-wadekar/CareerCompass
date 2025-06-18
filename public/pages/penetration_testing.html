@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Platforms & Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #e3f2fd);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #2196f3;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #bbdefb;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #222831;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #f9fafb;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-4px);
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #2196f3;
+            border-bottom: 3px solid #2196f3;
+            display: inline-block;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+        p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        .back {
+            margin-top: 35px;
+        }
+        .back a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #2196f3;
+            padding: 12px 28px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+        .back a:hover {
+            background-color: #1976d2;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .container {
+                padding: 25px;
+                margin: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>☁️ Cloud Platforms & Services</h2>
+        <nav>
+            <a href="#overview">Overview</a>
+            <a href="#providers">Providers</a>
+            <a href="#models">Deployment Models</a>
+            <a href="#back">Back</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>🌟 Cloud Platforms & Services</h1>
+        <p>Explore the world of cloud computing, key providers, and deployment models that power modern applications.</p>
+
+        <div id="overview" class="section">
+            <h2>🌐 What are Cloud Platforms?</h2>
+            <p>Cloud platforms offer scalable resources, storage, and computing power on-demand, enabling businesses to run applications without managing physical infrastructure.</p>
+        </div>
+
+        <div id="providers" class="section">
+            <h2>🏢 Leading Cloud Providers</h2>
+            <p>Dive into top providers like AWS, Microsoft Azure, and Google Cloud Platform, and understand their unique services and capabilities.</p>
+        </div>
+
+        <div id="models" class="section">
+            <h2>⚙️ Cloud Deployment Models</h2>
+            <p>Learn about public, private, hybrid, and multi-cloud deployment models, each catering to different business needs and compliance requirements.</p>
+        </div>
+
+        <div class="back" id="back">
+            <a href="index.html">🔙 Back to Career Roadmap</a>
+        </div>
+    </div>
+</body>
+</html>
