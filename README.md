@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Career Compass
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Career Compass** is a web-based application designed to guide users toward potential career paths based on their quiz responses.
 
-## Available Scripts
+> This project was developed during a **Techathon** event and completed in a **limited time frame**.  
+> It includes a **basic backend**, but no machine learning or advanced logic was used.  
+> The app focuses on simple career suggestions using predefined logic and a static dataset.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application presents a series of questions. Based on the selected responses, a suitable career path is recommended from a predefined set.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Quiz-based career guidance
+- Clean and responsive front-end interface
+- Basic backend for form handling or routing
+- Lightweight, functional, and easy to deploy
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Backend**: Node.js / Express.js *(or mention PHP, Python Flask, etc., if applicable)*
+- **Database**: None (static dataset used)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributors
+- Siddhi Wadekar
+- Sanskar Uravne
+- Deepti Patra
+- Samruddhi Lakhare
 
-### `npm run eject`
+---
+## Snapshots
+![image](https://github.com/user-attachments/assets/cdc3257f-c492-4895-9b06-76ac17f57b67)
+![image](https://github.com/user-attachments/assets/410bddc8-94f7-495d-8094-2a135020b32b)
+![image](https://github.com/user-attachments/assets/d7b3e409-e354-4f86-888d-ef4b684319f0)
+![image](https://github.com/user-attachments/assets/9589c93c-7040-48e1-bd8b-05c1d91c195f)
+![image](https://github.com/user-attachments/assets/1782e3c7-1296-424d-ba5c-08bdb5ad1822)
+![image](https://github.com/user-attachments/assets/b2439867-831b-4b04-b5ac-0f2eb81d765b)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
